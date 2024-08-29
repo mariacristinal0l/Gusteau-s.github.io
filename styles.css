@@ -118,43 +118,47 @@ html {
 	display: none;
 }
 
+/* Estilos básicos del menú */
 .menu {
-	display: flex;
-	gap: 2rem;
+    list-style: none;
+    display: flex;
 }
 
 .menu li {
-	list-style: none;
+    position: relative;
 }
 
+/* Estilos para el dropdown */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    list-style: none;
+}
+
+.dropdown-menu li {
+    padding: 5px 10px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Estilos para los enlaces */
 .menu a {
-	text-decoration: none;
-	font-size: 1.3rem;
-	color: var(--dark-color);
-	font-weight: 600;
-	text-transform: uppercase;
-	position: relative;
-}
-
-.menu a::after {
-	content: '';
-	width: 1.5rem;
-	height: 1px;
-	background-color: #a3733b;
-	position: absolute;
-	bottom: -3px;
-	left: 50%;
-	transform: translate(-50%, 50%);
-	opacity: 0;
-	transition: all 0.3s ease;
-}
-
-.menu a:hover::after {
-	opacity: 1;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    display: block;
 }
 
 .menu a:hover {
-	color: #fff;
+    background-color: #f0f0f0;
 }
 
 .search-form {
