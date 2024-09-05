@@ -1,2 +1,2 @@
-# Gusteau´s.github.io
+# Gusteaus.github.io
 Gusteau´s
