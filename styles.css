@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-	--primary-color: #ac6b2b;
-	--background-color: #ebc08c;
+	--primary-color: #d64558;
+	--background-color: #f5efe7;
 	--dark-color: #151515;
 }
 
@@ -118,88 +118,112 @@ html {
 	display: none;
 }
 
-/* Estilos básicos del menú */
 .menu {
-    list-style: none;
-    display: flex;
+	display: flex;
+	gap: 2rem;
 }
 
 .menu li {
-    position: relative;
+	list-style: none;
 }
 
-/* Estilos para el dropdown */
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    padding: 10px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-    list-style: none;
-}
-
-.dropdown-menu li {
-    padding: 5px 10px;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-/* Estilos para los enlaces */
 .menu a {
-    padding: 10px 15px;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    display: block;
-}
-
-.menu a:hover {
-    background-color: #f0f0f0;
-}
-
-.search-form {
+	text-decoration: none;
+	font-size: 1.3rem;
+	color: var(--dark-color);
+	font-weight: 600;
+	text-transform: uppercase;
 	position: relative;
-	display: flex;
-	align-items: center;
-	border: 2px solid #fff;
-	border-radius: 2rem;
-	background-color: #fff;
-	height: 4.4rem;
-	overflow: hidden;
+}
+
+.menu a::after {
+	content: '';
+	width: 1.5rem;
+	height: 1px;
+	background-color: #e2ded9;
+	position: absolute;
+	bottom: -3px;
+	left: 50%;
+	transform: translate(-50%, 50%);
+	opacity: 0;
+	transition: all 0.3s ease;
+}
+
+.menu a:hover::after {
+	opacity: 1;
+}
+
+/* Estilo para los enlaces dentro del menú cuando se pasa el cursor sobre ellos */
+.menu a:hover {
+    color: #fff;
+}
+
+/* Estilo para el contenedor de categorías */
+.container-categories {
+    display: flex;
+    gap: 20px; /* Espacio entre las tarjetas */
+    flex-wrap: wrap; /* Para ajustar las tarjetas en caso de que el espacio sea pequeño */
+}
+
+/* Estilo para las tarjetas de categoría */
+.card-category {
+    flex: 1;
+    min-width: 200px; /* Ajusta el tamaño mínimo según sea necesario */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Estilo específico para la categoría de Espresso */
+.category-expreso {
+    background-image: linear-gradient(#00000080, #00000080),
+        url('img/logo1.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+/* Estilo para el formulario de búsqueda */
+.search-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 2px solid #fff;
+    border-radius: 2rem;
+    background-color: #fff;
+    height: 4.4rem;
+    overflow: hidden;
 }
 
 .search-form input {
-	outline: none;
-	font-family: inherit;
-	border: none;
-	width: 25rem;
-	font-size: 1.4rem;
-	padding: 0 2rem;
-	color: #fffdfd;
-	cursor: pointer;
+    outline: none;
+    font-family: inherit;
+    border: none;
+    width: 25rem;
+    font-size: 1.4rem;
+    padding: 0 2rem;
+    color: #fffdfd;
+    cursor: pointer;
 }
 
 .search-form input::-webkit-search-cancel-button {
-	appearance: none;
+    appearance: none;
 }
 
+/* Estilo para el botón de búsqueda */
 .search-form .btn-search {
-	border: none;
-	background-color: var(--primary-color);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100%;
-	padding: 1rem;
+    border: none;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
 }
 
 .btn-search i {
-	font-size: 2rem;
-	color: #fff;
+    font-size: 2rem;
+    color: #fff;
 }
 
 /* ********************************** */
@@ -207,7 +231,7 @@ html {
 /* ********************************** */
 .banner {
 	background-image: linear-gradient(100deg, #000000, #00000020),
-		url('img/mars1.jpg');
+		url('img/logo2.jpeg');
 	height: 60rem;
 	background-size: cover;
 	background-position: center;
@@ -321,33 +345,27 @@ html {
 	gap: 2rem;
 }
 
-.category-moca {
+.category-Menu {
+    background-image: linear-gradient(#ff0062a4, #cf2f5f),
+        url('img/logo1.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: rgb(241, 29, 110); /* Color del texto para que contraste con el fondo */
+    padding: 20px; /* Añadir un poco de relleno alrededor del contenido */
+    text-align: center; /* Centrar el texto y otros elementos dentro de la tarjeta */
+}
+.category-restaurate {
 	background-image: linear-gradient(#00000080, #00000080),
-		url('img/moca-category.jpg');
+		url('img/restaurante.jpeg');
 	background-size: cover;
 	background-position: bottom;
 	background-repeat: no-repeat;
 }
 
-.category-capuchino {
-	background-image: linear-gradient(#00000080, #00000080),
-		url('img/capuchino-category.jpg');
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-}
-
-.category-expreso {
-	background-image: linear-gradient(#00000080, #00000080),
-		url('img/expreso-category.jpg');
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-}
-
 .card-category p {
 	font-size: 2.5rem;
-	color: #fff;
+	color: #e90c55;
 	text-transform: capitalize;
 	position: relative;
 }
@@ -356,7 +374,7 @@ html {
 	content: '';
 	width: 2.5rem;
 	height: 2px;
-	background-color: #fff;
+	background-color: #ff0055f3;
 	position: absolute;
 	bottom: -1rem;
 	left: 50%;
@@ -365,7 +383,7 @@ html {
 
 .card-category span {
 	font-size: 1.6rem;
-	color: #fff;
+	color: #f11c4a;
 	cursor: pointer;
 }
 
@@ -418,7 +436,7 @@ html {
 }
 
 .card-product {
-	background-color: #d19649;
+	background-color: #ffc889;
 	padding: 2rem 3rem;
 	border-radius: 0.5rem;
 	cursor: pointer;
